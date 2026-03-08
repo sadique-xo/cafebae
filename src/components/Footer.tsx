@@ -1,0 +1,67 @@
+import Link from "next/link";
+import { Instagram, MessageCircle } from "lucide-react";
+import { FOOTER } from "@/data/cafe-data";
+
+export function Footer() {
+  return (
+    <footer className="py-16 px-4 bg-brand-charcoal border-t border-white/10">
+      <div className="mx-auto max-w-4xl">
+        <div className="text-center mb-8">
+          <h3 className="font-heading text-2xl font-bold text-white mb-2">
+            {FOOTER.name}
+          </h3>
+          <p className="text-brand-yellow font-medium">{FOOTER.tagline}</p>
+          <p className="text-white/60 text-sm mt-2">{FOOTER.brands}</p>
+        </div>
+        <div className="flex justify-center gap-6 mb-8">
+          <a
+            href={FOOTER.social.instagramBae}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-brand-yellow transition-colors"
+            aria-label="Cafe BAE Instagram"
+          >
+            <Instagram className="h-6 w-6" />
+          </a>
+          <a
+            href={FOOTER.social.instagramYellow}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-brand-yellow transition-colors"
+            aria-label="YELLOW Instagram"
+          >
+            <Instagram className="h-6 w-6" />
+          </a>
+          <a
+            href={FOOTER.social.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-brand-yellow transition-colors"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="h-6 w-6" />
+          </a>
+        </div>
+        <p className="text-center text-white/60 text-sm mb-4">
+          <a href={`tel:${FOOTER.phone.replace(/\s/g, "")}`} className="hover:text-brand-yellow transition-colors">
+            {FOOTER.phone}
+          </a>
+        </p>
+        <div className="text-center text-white/50 text-sm space-y-1">
+          <p>{FOOTER.legal}</p>
+          <p>
+            Created by{" "}
+            <Link
+              href={FOOTER.credit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-yellow transition-colors"
+            >
+              Sadique (sadique.co)
+            </Link>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
