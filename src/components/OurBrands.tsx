@@ -14,7 +14,7 @@ export function OurBrands() {
           {BRANDS.map((brand) => (
             <Card
               key={brand.id}
-              className="bg-brand-black border-white/10 overflow-hidden"
+              className="bg-brand-black border-white/5 overflow-hidden hover:border-brand-yellow/15 hover:shadow-glow-sm transition-all duration-300"
             >
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between gap-2">
@@ -23,7 +23,7 @@ export function OurBrands() {
                       {brand.name}
                     </h3>
                     {brand.subtitle && (
-                      <Badge className="mt-2 bg-brand-yellow/20 text-brand-yellow border-brand-yellow/30 hover:bg-brand-yellow/30">
+                      <Badge className="mt-2 bg-brand-yellow/15 text-brand-yellow border-brand-yellow/25 hover:bg-brand-yellow/25">
                         {brand.subtitle}
                       </Badge>
                     )}
@@ -32,30 +32,30 @@ export function OurBrands() {
                     href={brand.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/60 hover:text-brand-yellow transition-colors"
+                    className="text-white/50 hover:text-brand-yellow transition-colors"
                     aria-label={`${brand.name} Instagram`}
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
                 </div>
-                <p className="text-brand-yellow/90 text-sm font-medium mt-1">
+                <p className="text-brand-yellow/80 text-sm font-medium mt-1">
                   {brand.tagline}
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-white/80 text-sm">{brand.vibe}</p>
-                <div className="text-white/60 text-sm space-y-1">
+                <p className="text-white/70 text-sm">{brand.vibe}</p>
+                <div className="text-white/50 text-sm space-y-1">
                   <p>{brand.address}</p>
                   <p>{brand.hours}</p>
                   {brand.price && (
-                    <p className="text-brand-yellow/80">{brand.price}</p>
+                    <p className="text-brand-yellow/70">{brand.price}</p>
                   )}
                 </div>
                 <a
                   href={brand.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-brand-yellow px-4 py-2 text-sm font-semibold text-black hover:bg-brand-yellow/90"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-brand-yellow px-4 py-2 text-sm font-semibold text-brand-black hover:brightness-110 transition-all"
                 >
                   {brand.cta.label}
                   <ExternalLink className="ml-2 h-4 w-4" />

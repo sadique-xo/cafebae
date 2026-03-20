@@ -27,7 +27,7 @@ export function Navbar() {
         className={cn(
           "mx-auto flex max-w-6xl items-center justify-between transition-all duration-300 rounded-full px-6 py-3",
           scrolled
-            ? "bg-black/80 backdrop-blur-xl border border-white/10 shadow-lg"
+            ? "bg-brand-black/90 backdrop-blur-xl border border-brand-yellow/10 shadow-glow-sm"
             : "bg-transparent"
         )}
       >
@@ -40,7 +40,7 @@ export function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-white/90 hover:text-brand-yellow transition-colors"
+              className="text-sm font-medium text-white/80 hover:text-brand-yellow transition-colors"
             >
               {link.label}
             </Link>
@@ -49,7 +49,7 @@ export function Navbar() {
             href={SITE.zomato}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center rounded-full bg-brand-yellow px-4 text-sm font-semibold text-black hover:bg-brand-yellow/90"
+            className="inline-flex h-9 items-center justify-center rounded-full bg-brand-yellow px-4 text-sm font-semibold text-brand-black hover:brightness-110 shadow-glow-sm transition-all"
           >
             Reserve a Table
           </a>
@@ -79,7 +79,7 @@ export function Navbar() {
         />
         <div
           className={cn(
-            "absolute top-0 right-0 h-full w-[280px] bg-brand-black border-l border-white/10 shadow-xl transition-transform duration-300",
+            "absolute top-0 right-0 h-full w-[280px] bg-brand-charcoal border-l border-brand-yellow/10 shadow-xl transition-transform duration-300",
             open ? "translate-x-0" : "translate-x-full"
           )}
         >
@@ -107,7 +107,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="inline-flex h-9 w-full items-center justify-center rounded-full bg-brand-yellow px-4 text-sm font-semibold text-black hover:bg-brand-yellow/90"
+              className="inline-flex h-9 w-full items-center justify-center rounded-full bg-brand-yellow px-4 text-sm font-semibold text-brand-black hover:brightness-110 transition-all"
             >
               Reserve a Table
             </a>

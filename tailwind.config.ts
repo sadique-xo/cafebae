@@ -15,9 +15,10 @@ export default {
       },
       colors: {
         brand: {
-          black: "#0A0A0A",
-          charcoal: "#1A1A1A",
-          yellow: "#F5C800",
+          black: "#0C0A08",
+          charcoal: "#161310",
+          surface: "#1F1B17",
+          yellow: "#D4A035",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -39,6 +40,12 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        glow: "0 0 20px rgba(212, 160, 53, 0.15), 0 0 60px rgba(212, 160, 53, 0.05)",
+        "glow-sm": "0 0 10px rgba(212, 160, 53, 0.1)",
+        "glow-lg":
+          "0 0 30px rgba(212, 160, 53, 0.2), 0 0 80px rgba(212, 160, 53, 0.08)",
       },
     },
   },

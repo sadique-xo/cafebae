@@ -13,7 +13,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((review) => (
             <Card
               key={review.name}
-              className="bg-brand-charcoal border-white/10"
+              className="bg-brand-charcoal border-white/5 hover:border-brand-yellow/10 transition-colors duration-300"
             >
               <CardContent className="pt-6">
                 <div className="flex gap-1 mb-3">
@@ -24,16 +24,16 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <p className="text-white/90 mb-4 italic">&ldquo;{review.text}&rdquo;</p>
+                <p className="text-white/80 mb-4 italic">&ldquo;{review.text}&rdquo;</p>
                 <div className="text-sm">
                   <span className="font-semibold text-white">{review.name}</span>
-                  <span className="text-white/60"> · {review.source}</span>
+                  <span className="text-white/50"> · {review.source}</span>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
-        <p className="text-center text-white/70 mt-8">
+        <p className="text-center text-white/60 mt-8">
           4.4★ on Google · 4.5★ YELLOW on Google
         </p>
       </div>

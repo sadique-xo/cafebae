@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased bg-[#0A0A0A] text-white`}
+        className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased bg-[#0C0A08] text-white`}
       >
         {children}
       </body>

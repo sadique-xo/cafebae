@@ -13,7 +13,7 @@ export function Location() {
           {LOCATIONS.map((loc) => (
             <Card
               key={loc.name}
-              className="bg-brand-black border-white/10"
+              className="bg-brand-black border-white/5 hover:border-brand-yellow/15 transition-colors duration-300"
             >
               <CardHeader>
                 <h3 className="font-heading text-xl font-bold text-white">
@@ -21,17 +21,17 @@ export function Location() {
                 </h3>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex gap-3 text-white/80 text-sm">
+                <div className="flex gap-3 text-white/70 text-sm">
                   <MapPin className="h-5 w-5 shrink-0 text-brand-yellow" />
                   <span>{loc.address}</span>
                 </div>
-                <div className="flex gap-3 text-white/80 text-sm">
+                <div className="flex gap-3 text-white/70 text-sm">
                   <Phone className="h-5 w-5 shrink-0 text-brand-yellow" />
                   <a href={`tel:${loc.phone.replace(/\s/g, "")}`} className="hover:text-brand-yellow transition-colors">
                     {loc.phone}
                   </a>
                 </div>
-                <div className="flex gap-3 text-white/80 text-sm">
+                <div className="flex gap-3 text-white/70 text-sm">
                   <Clock className="h-5 w-5 shrink-0 text-brand-yellow" />
                   <span>{loc.hours}</span>
                 </div>
@@ -40,7 +40,7 @@ export function Location() {
                     href={loc.maps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-black hover:bg-brand-yellow/90"
+                    className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-brand-black hover:brightness-110 transition-all"
                   >
                     <MapPin className="mr-1 h-4 w-4" />
                     Maps
@@ -49,7 +49,7 @@ export function Location() {
                     href={loc.zomato}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-black hover:bg-brand-yellow/90"
+                    className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-brand-black hover:brightness-110 transition-all"
                   >
                     Zomato
                   </a>
@@ -57,7 +57,7 @@ export function Location() {
                     href={loc.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-lg border border-white/20 px-3 py-1.5 text-sm font-medium text-white hover:bg-white/10"
+                    className="inline-flex items-center rounded-lg border border-white/15 px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 hover:border-brand-yellow/30 transition-all"
                   >
                     <MessageCircle className="mr-1 h-4 w-4" />
                     WhatsApp
@@ -67,7 +67,7 @@ export function Location() {
             </Card>
           ))}
         </div>
-        <div className="mt-8 p-6 bg-brand-black rounded-2xl border border-white/10">
+        <div className="mt-8 p-6 bg-brand-black rounded-2xl border border-white/5">
           <h4 className="font-heading font-semibold text-white mb-3">
             Order Online
           </h4>
@@ -76,7 +76,7 @@ export function Location() {
               href={LOCATIONS[0].zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-black hover:bg-brand-yellow/90"
+              className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-brand-black hover:brightness-110 transition-all"
             >
               Zomato (Cafe BAE Lalpur)
             </a>
@@ -84,7 +84,7 @@ export function Location() {
               href={LOCATIONS[1].zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-black hover:bg-brand-yellow/90"
+              className="inline-flex items-center rounded-lg bg-brand-yellow px-3 py-1.5 text-sm font-medium text-brand-black hover:brightness-110 transition-all"
             >
               Zomato (YELLOW Doranda)
             </a>
@@ -92,7 +92,7 @@ export function Location() {
               href={SITE.petpooja}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg border border-white/20 px-3 py-1.5 text-sm font-medium text-white hover:bg-white/10"
+              className="inline-flex items-center rounded-lg border border-white/15 px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 hover:border-brand-yellow/30 transition-all"
             >
               Menu (PetPooja)
             </a>
