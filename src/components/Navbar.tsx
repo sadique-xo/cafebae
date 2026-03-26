@@ -12,9 +12,13 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /** Over hero: solid white + shadow so links stay readable on yellow/busy photo. Scrolled: dark on glass bar. */
+  const onHero = !scrolled;
 
   return (
     <header
@@ -33,9 +37,21 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="font-heading text-xl font-bold text-foreground tracking-tight inline-flex items-center gap-2"
+          className={cn(
+            "font-heading text-xl font-bold tracking-tight inline-flex items-center gap-2 transition-colors",
+            onHero
+              ? "text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.85),0_2px_16px_rgba(0,0,0,0.45)]"
+              : "text-foreground"
+          )}
         >
-          <span className="inline-flex rounded-sm border-2 border-primary/35 bg-primary/10 p-1.5 text-primary shadow-sm">
+          <span
+            className={cn(
+              "inline-flex rounded-sm border-2 p-1.5 shadow-sm transition-colors",
+              onHero
+                ? "border-white/50 bg-white/15 text-white backdrop-blur-sm [box-shadow:0_2px_12px_rgba(0,0,0,0.35)]"
+                : "border-primary/35 bg-primary/10 text-primary"
+            )}
+          >
             <Coffee className="h-5 w-5" strokeWidth={2} aria-hidden />
           </span>
           {SITE.name}
@@ -46,7 +62,12 @@ export function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={cn(
+                "text-sm font-semibold transition-colors",
+                onHero
+                  ? "text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.85),0_2px_12px_rgba(0,0,0,0.4)] hover:text-white/95"
+                  : "text-foreground/90 hover:text-primary"
+              )}
             >
               {link.label}
             </Link>
@@ -64,10 +85,15 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-sm text-foreground hover:bg-muted border border-transparent hover:border-border"
+          className={cn(
+            "md:hidden inline-flex h-9 w-9 items-center justify-center rounded-sm border border-transparent transition-colors",
+            onHero
+              ? "text-white [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.85))] hover:bg-white/15 hover:border-white/25"
+              : "text-foreground hover:bg-muted hover:border-border"
+          )}
           aria-label="Open menu"
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-6 w-6" strokeWidth={2.5} />
         </button>
       </nav>
 
