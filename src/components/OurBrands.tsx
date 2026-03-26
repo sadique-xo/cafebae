@@ -5,25 +5,25 @@ import { BRANDS } from "@/data/cafe-data";
 
 export function OurBrands() {
   return (
-    <section id="brands" className="py-20 px-4 bg-brand-charcoal">
+    <section id="brands" className="py-20 px-4 bg-brand-muted">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-12">
+        <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-12">
           Our Brands
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {BRANDS.map((brand) => (
             <Card
               key={brand.id}
-              className="bg-brand-black border-white/5 overflow-hidden hover:border-brand-yellow/15 hover:shadow-glow-sm transition-all duration-300"
+              className="bg-card border-border overflow-hidden hover:border-primary/40 hover:shadow-glow-sm transition-all duration-300 shadow-block"
             >
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-heading text-xl font-bold text-white">
+                    <h3 className="font-heading text-xl font-bold text-foreground">
                       {brand.name}
                     </h3>
                     {brand.subtitle && (
-                      <Badge className="mt-2 bg-brand-yellow/15 text-brand-yellow border-brand-yellow/25 hover:bg-brand-yellow/25">
+                      <Badge className="mt-2 bg-primary/15 text-primary border-primary/30 hover:bg-primary/25">
                         {brand.subtitle}
                       </Badge>
                     )}
@@ -32,30 +32,30 @@ export function OurBrands() {
                     href={brand.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/50 hover:text-brand-yellow transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={`${brand.name} Instagram`}
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
                 </div>
-                <p className="text-brand-yellow/80 text-sm font-medium mt-1">
+                <p className="text-primary/90 text-sm font-semibold mt-1">
                   {brand.tagline}
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-white/70 text-sm">{brand.vibe}</p>
-                <div className="text-white/50 text-sm space-y-1">
+                <p className="text-muted-foreground text-sm">{brand.vibe}</p>
+                <div className="text-muted-foreground text-sm space-y-1">
                   <p>{brand.address}</p>
                   <p>{brand.hours}</p>
                   {brand.price && (
-                    <p className="text-brand-yellow/70">{brand.price}</p>
+                    <p className="text-primary font-medium">{brand.price}</p>
                   )}
                 </div>
                 <a
                   href={brand.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-brand-yellow px-4 py-2 text-sm font-semibold text-brand-black hover:brightness-110 transition-all"
+                  className="inline-flex w-full items-center justify-center rounded-sm bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:brightness-95 transition-all border-2 border-primary"
                 >
                   {brand.cta.label}
                   <ExternalLink className="ml-2 h-4 w-4" />

@@ -4,21 +4,21 @@ import { FOOTER } from "@/data/cafe-data";
 
 export function Footer() {
   return (
-    <footer className="py-16 px-4 bg-brand-charcoal border-t border-brand-yellow/10">
+    <footer className="py-16 px-4 bg-brand-canvas border-t-2 border-border">
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <h3 className="font-heading text-2xl font-bold text-white mb-2">
+          <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
             {FOOTER.name}
           </h3>
-          <p className="text-brand-yellow font-medium">{FOOTER.tagline}</p>
-          <p className="text-white/50 text-sm mt-2">{FOOTER.brands}</p>
+          <p className="text-primary font-semibold">{FOOTER.tagline}</p>
+          <p className="text-muted-foreground text-sm mt-2">{FOOTER.brands}</p>
         </div>
-        <div className="flex justify-center gap-6 mb-8">
+        <div className="flex justify-center gap-8 mb-8">
           <a
             href={FOOTER.social.instagramBae}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 hover:text-brand-yellow transition-colors"
+            className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="Cafe BAE Instagram"
           >
             <Instagram className="h-6 w-6" />
@@ -27,7 +27,7 @@ export function Footer() {
             href={FOOTER.social.instagramYellow}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 hover:text-brand-yellow transition-colors"
+            className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="YELLOW Instagram"
           >
             <Instagram className="h-6 w-6" />
@@ -36,18 +36,21 @@ export function Footer() {
             href={FOOTER.social.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 hover:text-brand-yellow transition-colors"
+            className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="WhatsApp"
           >
             <MessageCircle className="h-6 w-6" />
           </a>
         </div>
-        <p className="text-center text-white/50 text-sm mb-4">
-          <a href={`tel:${FOOTER.phone.replace(/\s/g, "")}`} className="hover:text-brand-yellow transition-colors">
+        <p className="text-center text-muted-foreground text-sm mb-4">
+          <a
+            href={`tel:${FOOTER.phone.replace(/\s/g, "")}`}
+            className="hover:text-primary transition-colors"
+          >
             {FOOTER.phone}
           </a>
         </p>
-        <div className="text-center text-white/40 text-sm space-y-1">
+        <div className="text-center text-muted-foreground text-sm space-y-1">
           <p>{FOOTER.legal}</p>
           <p>
             Created by{" "}
@@ -55,7 +58,7 @@ export function Footer() {
               href={FOOTER.credit.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-brand-yellow transition-colors"
+              className="hover:text-primary transition-colors"
             >
               Sadique (sadique.co)
             </Link>

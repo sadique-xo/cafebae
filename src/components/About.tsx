@@ -2,24 +2,31 @@ import { ABOUT } from "@/data/cafe-data";
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-brand-black">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-6">
-          {ABOUT.heading}
-        </h2>
-        <p className="text-lg text-white/80 leading-relaxed mb-12 max-w-2xl">
-          {ABOUT.text}
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <section
+      id="about"
+      className="relative py-20 px-4 bg-background bg-block-grid border-y-2 border-border"
+    >
+      <div className="mx-auto max-w-5xl">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground max-w-xl">
+            {ABOUT.heading}
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:text-right">
+            {ABOUT.text}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border-2 border-border shadow-block">
           {ABOUT.stats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-brand-charcoal rounded-2xl p-6 border border-white/5 hover:border-brand-yellow/20 transition-colors"
+              className="bg-card p-8 sm:min-h-[180px] flex flex-col justify-center border-border hover:bg-accent/50 transition-colors"
             >
-              <div className="font-heading text-3xl font-bold text-brand-yellow mb-1">
+              <div className="font-heading text-3xl sm:text-4xl font-bold text-primary mb-2 tabular-nums">
                 {stat.value}
               </div>
-              <div className="text-sm text-white/60">{stat.label}</div>
+              <div className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

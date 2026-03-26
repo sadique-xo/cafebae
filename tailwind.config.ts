@@ -15,10 +15,12 @@ export default {
       },
       colors: {
         brand: {
-          black: "#0C0A08",
-          charcoal: "#161310",
-          surface: "#1F1B17",
-          yellow: "#D4A035",
+          ink: "#1c1917",
+          canvas: "#fafaf8",
+          paper: "#ffffff",
+          muted: "#f0ebe4",
+          border: "#e7e2d9",
+          yellow: "#c9a000",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -35,17 +37,20 @@ export default {
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
+        destructive: "var(--destructive)",
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) + 2px)",
+        sm: "calc(var(--radius) - 2px)",
       },
       boxShadow: {
-        glow: "0 0 20px rgba(212, 160, 53, 0.15), 0 0 60px rgba(212, 160, 53, 0.05)",
-        "glow-sm": "0 0 10px rgba(212, 160, 53, 0.1)",
+        glow:
+          "0 0 0 1px rgba(201, 160, 0, 0.2), 0 8px 24px rgba(201, 160, 0, 0.12)",
+        "glow-sm": "0 0 0 1px rgba(201, 160, 0, 0.15), 0 4px 12px rgba(201, 160, 0, 0.08)",
         "glow-lg":
-          "0 0 30px rgba(212, 160, 53, 0.2), 0 0 80px rgba(212, 160, 53, 0.08)",
+          "0 0 0 1px rgba(201, 160, 0, 0.25), 0 12px 40px rgba(201, 160, 0, 0.15)",
+        block: "4px 4px 0 0 rgba(28, 25, 23, 0.08)",
       },
     },
   },
