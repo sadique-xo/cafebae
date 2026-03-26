@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Heart, Instagram, MessageCircle } from "lucide-react";
 import { FOOTER } from "@/data/cafe-data";
 
 export function Footer() {
@@ -10,7 +10,14 @@ export function Footer() {
           <h3 className="font-heading text-2xl font-bold text-foreground mb-2">
             {FOOTER.name}
           </h3>
-          <p className="text-primary font-semibold">{FOOTER.tagline}</p>
+          <p className="text-primary font-semibold inline-flex items-center justify-center gap-2 flex-wrap">
+            <Heart
+              className="h-4 w-4 shrink-0 fill-primary/25 text-primary"
+              strokeWidth={2}
+              aria-hidden
+            />
+            {FOOTER.tagline}
+          </p>
           <p className="text-muted-foreground text-sm mt-2">{FOOTER.brands}</p>
         </div>
         <div className="flex justify-center gap-8 mb-8">

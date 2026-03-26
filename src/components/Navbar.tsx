@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Coffee, Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/data/cafe-data";
 import { cn } from "@/lib/utils";
 
@@ -33,8 +33,11 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="font-heading text-xl font-bold text-foreground tracking-tight"
+          className="font-heading text-xl font-bold text-foreground tracking-tight inline-flex items-center gap-2"
         >
+          <span className="inline-flex rounded-sm border-2 border-primary/35 bg-primary/10 p-1.5 text-primary shadow-sm">
+            <Coffee className="h-5 w-5" strokeWidth={2} aria-hidden />
+          </span>
           {SITE.name}
         </Link>
 

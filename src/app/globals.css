@@ -65,4 +65,28 @@
       );
     background-size: 48px 48px;
   }
+
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(2deg);
+    }
+  }
+
+  .animate-float-soft {
+    animation: float-soft 6s ease-in-out infinite;
+  }
+
+  .animate-float-soft-slow {
+    animation: float-soft 8s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .animate-float-soft-delay {
+    animation: float-soft 7s ease-in-out infinite;
+    animation-delay: 0.8s;
+  }
 }

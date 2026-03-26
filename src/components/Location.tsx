@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { Clock, MapPin, MapPinned, MessageCircle, Phone } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { LOCATIONS, SITE } from "@/data/cafe-data";
 
@@ -6,9 +6,14 @@ export function Location() {
   return (
     <section id="location" className="py-20 px-4 bg-brand-muted">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-12">
-          Find Us
-        </h2>
+        <div className="flex flex-wrap items-center gap-3 mb-12">
+          <span className="inline-flex rounded-sm border-2 border-primary/30 bg-primary/10 p-2 text-primary">
+            <MapPinned className="h-7 w-7" strokeWidth={2} aria-hidden />
+          </span>
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground">
+            Find Us
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {LOCATIONS.map((loc) => (
             <Card
